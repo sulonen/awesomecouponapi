@@ -1,5 +1,23 @@
 ## Code Challenge
-Build Awesome Coupons API that can Create/Read/Update/Delete coupon data.
+Build Awesome Coupons RESTful API that can Create/Read/Update/Delete coupon data. Feel free to use any programming language and/or framework.
+
+### Things we are looking for
+
+- Clear, simple code
+- Explanatory comments
+- Consistent Naming Conventions
+- Request validation
+- Efficient source/test code structure/folder
+
+### Deliverables
+
+- Please send us back a link to a git repo with the completed code challenge.
+- Include a README.md file in your repo with a link to your application deployed on Heroku or Digital Ocean.
+- Also include in readme that explains the benefits and any additional challenges you faced.
+- DO YOUR OWN WORK. If it appears not to be your own work, it will be disqualified.
+- DOCUMENT ALL ASSUMPTIONS. Explain why you made that assumption. You may make the wrong assumption, but if it’s
+well-documented, you’ll help us see your thought process. Undocumented assumptions can’t help us help you.
+- HAVE FUN. This will likely be challenging, but take this opportunity to exercise your creativity.
 
 ### Awesome Coupons API Specification
 
@@ -11,7 +29,7 @@ GET /coupons
 GET /coupons?state=valid
 GET /coupons?state=invalid
 ```
-state param is used to filter out coupons that are valid (not expired) or invalid (expired)
+state param is use for filtering coupons that are valid (not expired) or invalid (expired)
 
 **Response**
 
@@ -73,7 +91,7 @@ returns 200 OK
 ]
 ```
 
-### /coupons/:couponId  GET/
+### /coupons/:couponId  GET
 
 #### Getting a specific coupon
 
@@ -119,7 +137,8 @@ returns 200 OK
   "published_at": "2016-03-05T08:40:51.620Z"
 }
 ```
-### Create a specific coupon
+### /coupons POST
+#### Create a specific coupon
 ```
 POST /coupons with {:data} like
 
@@ -165,10 +184,10 @@ returns 201 Created & set location response with /coupons/new_id.
 ```
 {"id": 7}
 ```
-
-### Update a specific coupon
+### /coupons/:couponId PUT
+#### Update a specific coupon
 ```
-PUT /coupons with {:data} like
+PUT /coupons/:couponId with {:data} like
 
 {
   "couponcode": "UPDATED_COUPON"
@@ -218,7 +237,7 @@ returns 200 OK
   "published_at": "2016-03-05T08:40:51.620Z"
 }
 ```
-
+### /coupons/:couponId Delete
 #### Delete a specific coupon
 ```
 DELETE /coupons/:couponId
@@ -238,14 +257,3 @@ curl -k  -X DELETE http://localhost:3600/coupons/1
 ```
 Output:
 returns 204 No Content
-
-#### Things we are looking for
-
-- Clear, simple code
-- Explanatory comments for beginners
-- Consistent Naming Conventions
-
-#### Deliverables
-
-- Please send us back a link to a git repo with the completed code challenge.
-- Include a README.md file in your repo with a link to your application deployed on Heroku or Digital Ocean.
