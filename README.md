@@ -1,5 +1,5 @@
 ## Code Challenge
-Build Awesome Coupons RESTful API that can Create/Read/Update/Delete coupon data. Feel free to use any programming language and/or framework.
+Build Awesome Coupons RESTful JSON API that can Create/Read/Update/Delete coupon data. Feel free to use any programming language and/or framework.
 
 ### Things we are looking for
 
@@ -33,7 +33,7 @@ state param is use for filtering coupons that are valid (not expired) or invalid
 
 **Response**
 
-- Return HTTP status 200 with a payload of the coupons list. The content type is "application/json".
+- Return HTTP status 200 with a payload of the coupons list.
 - If no coupons exist, return HTTP status 200 with an empty array.
 - If server error, return HTTP status 500 with a reason payload.
 - Otherwise, return the appropriate standard HTTP status.
@@ -101,7 +101,7 @@ GET /coupons/:couponId
 
 **Response**
 
-- Return HTTP status 200 with a payload of the requested coupon. The content type is "application/json".
+- Return HTTP status 200 with a payload of the requested coupon.
 - If invalid coupon ID, return HTTP status 400.
 - If non exist coupon ID, return HTTP status 404.
 - If server error, return HTTP status 500 with a reason payload.
@@ -198,7 +198,6 @@ PUT /coupons/:couponId with {:data} like
 **Response**
 
 - Return HTTP status 200 with a payload of specific coupon.
-The content type is "application/json".
 - If invalid coupon ID or invalid payload, return HTTP status 400.
 - If non exist coupon ID, return HTTP status 404.
 - If no or invalid content type header, return HTTP status 415.
