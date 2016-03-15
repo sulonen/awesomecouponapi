@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "category": "Coupons & Special Offers",
     "couponcode": "60 31261",
     "description": "Offer limited to in-store purchase only.",
@@ -19,7 +18,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 2,
     "category": "Coupons & Special Offers",
     "couponcode": "PETS",
     "description": "Offer limited to in-store purchase only.",
@@ -38,7 +36,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 3,
     "category": "Coupons & Special Offers",
     "couponcode": "4724878",
     "description": "Year end sale Event.",
@@ -57,7 +54,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 4,
     "category": "Coupons & Special Offers",
     "couponcode": "2672363",
     "description": "Offer limited to in-store purchase only.",
@@ -76,7 +72,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 5,
     "category": "Coupons & Special Offers",
     "couponcode": "4597663",
     "description": "Offer limited to in-store purchase only.",
@@ -95,7 +90,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 6,
     "category": "Coupons & Special Offers",
     "couponcode": "PETS",
     "description": "Offer limited to in-store purchase only.",
@@ -114,7 +108,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 7,
     "category": "Coupons & Special Offers",
     "couponcode": "4728277",
     "description": "Offer limited to in-store purchase only.",
@@ -133,7 +126,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 8,
     "category": "Coupons & Special Offers",
     "couponcode": "ULTA",
     "description": "Offer limited to in-store purchase only.",
@@ -152,7 +144,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 9,
     "category": "Coupons & Special Offers",
     "couponcode": "BEBE",
     "description": "Offer limited to in-store purchase only.",
@@ -171,7 +162,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 10,
     "category": "Coupons & Special Offers",
     "couponcode": "PETS",
     "description": "Offer limited to in-store purchase only.",
@@ -190,7 +180,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 11,
     "category": "Coupons & Special Offers",
     "couponcode": "CART",
     "description": "Offer limited to in-store purchase only.",
@@ -209,7 +198,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 12,
     "category": "Coupons & Special Offers",
     "couponcode": "4731060",
     "description": "Offer limited to in-store purchase only.",
@@ -228,7 +216,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 13,
     "category": "Coupons & Special Offers",
     "couponcode": "Tilly",
     "description": "Offer limited to in-store purchase only.",
@@ -247,7 +234,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 14,
     "category": "Coupons & Special Offers",
     "couponcode": "RID",
     "description": "Offer limited to in-store purchase only.",
@@ -266,7 +252,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 15,
     "category": "Coupons & Special Offers",
     "couponcode": "50014943",
     "description": "Offer limited to in-store purchase only.",
@@ -285,7 +270,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 16,
     "category": "Coupons & Special Offers",
     "couponcode": "Vitamin",
     "description": "Offer limited to in-store purchase only.",
@@ -304,7 +288,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 17,
     "category": "Coupons & Special Offers",
     "couponcode": "1079",
     "description": "Offer limited to in-store purchase only.",
@@ -323,7 +306,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 18,
     "category": "Coupons & Special Offers",
     "couponcode": "PETS",
     "description": "Offer limited to in-store purchase only.",
@@ -342,7 +324,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 19,
     "category": "Coupons & Special Offers",
     "couponcode": "4726184",
     "description": "Offer limited to in-store purchase only.",
@@ -361,7 +342,6 @@
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 20,
     "category": "Coupons & Special Offers",
     "couponcode": "CREW",
     "description": "Offer not valid in the 769 Madison Avenue, Brookfield Place, Liquor Store, Ludlow Shops.",
