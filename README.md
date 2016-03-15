@@ -73,19 +73,19 @@ returns 200 OK
 ]
 ```
 
-### /coupons/:uuid  GET/
+### /coupons/:couponId  GET/
 
 #### Getting a specific coupon
 
 ```
-GET /coupons/:uuid
+GET /coupons/:couponId
 ```
 
 **Response**
 
 - Return HTTP status 200 with a payload of the requested coupon. The content type is "application/json".
 - If invalid coupon ID, return HTTP status 400.
-- If non exist order ID, return HTTP status 404.
+- If non exist coupon ID, return HTTP status 404.
 - If server error, return HTTP status 500 with a reason payload.
 - Otherwise, return the appropriate standard HTTP status.
 
@@ -178,10 +178,10 @@ PUT /coupons with {:data} like
 
 **Response**
 
-- Return HTTP status 200 with a payload of specific order.
+- Return HTTP status 200 with a payload of specific coupon.
 The content type is "application/json".
-- If invalid order ID or invalid payload, return HTTP status 400.
-- If non exist order ID, return HTTP status 404.
+- If invalid coupon ID or invalid payload, return HTTP status 400.
+- If non exist coupon ID, return HTTP status 404.
 - If no or invalid content type header, return HTTP status 415.
 - If server error, return HTTP status 500 with a reason payload.
 - Otherwise, return the appropriate standard HTTP status.
@@ -191,7 +191,7 @@ The content type is "application/json".
 Input:
 ```
 curl -k  -H "Content-Type: application/json"
-http://localhost:3600/orders/1 -X PUT  -d '{"couponcode": "UPDATED_COUPON"}'
+http://localhost:3600/coupons/1 -X PUT  -d '{"couponcode": "UPDATED_COUPON"}'
 ```
 
 Output:
@@ -221,7 +221,7 @@ returns 200 OK
 
 #### Delete a specific coupon
 ```
-DELETE /coupons/:orderId
+DELETE /coupons/:couponId
 ```
 
 **Response**
