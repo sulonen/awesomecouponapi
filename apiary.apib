@@ -1,0 +1,89 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Awesome Coupons API
+
+Awesome Coupons is a simple API allowing consumers to Create/Read/Update/Delete coupons.
+
+## Questions Collection [/coupons]
+
+### List All Coupons [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "category": "Coupons & Special Offers",
+                "couponcode": "60 31261",
+                "description": "Offer limited to in-store purchase only.",
+                "merchant": "Super Sporting Goods",
+                "title": "20% Off 2 Regular-Priced Items and/or 10% Off 2 Sale-Priced Items",
+                "store": {
+                  "lat": 47.66001,
+                  "long": -122.31313,
+                  "city": "Seattle",
+                  "phone": "547-2445",
+                  "state": "Wa",
+                  "street": "4315 UNIVERSITY WAY N.E.",
+                  "zip": "98105"
+                },
+                "expire_at": "2016-08-05T08:40:51.620Z",
+                "published_at": "2016-03-05T08:40:51.620Z"
+            }
+        ]
+
+### Create a Coupon [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "category": "Coupons & Special Offers",
+                "couponcode": "60 31261",
+                "description": "Offer limited to in-store purchase only.",
+                "merchant": "Super Sporting Goods",
+                "title": "20% Off 2 Regular-Priced Items and/or 10% Off 2 Sale-Priced Items",
+                "store": {
+                  "lat": 47.66001,
+                  "long": -122.31313,
+                  "city": "Seattle",
+                  "phone": "547-2445",
+                  "state": "Wa",
+                  "street": "4315 UNIVERSITY WAY N.E.",
+                  "zip": "98105"
+                },
+                "expire_at": "2016-08-05T08:40:51.620Z",
+                "published_at": "2016-03-05T08:40:51.620Z"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 0
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 0
+                    }
+                ]
+            }
