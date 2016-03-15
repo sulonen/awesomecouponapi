@@ -165,7 +165,7 @@ POST /coupons with {:data} like
 
 **Response**
 
-- Return HTTP status 201. The content type is "application/json".
+- Return HTTP status 201.
 - If invalid post data, return HTTP status 400.
 - If no or invalid content type header, return HTTP status 415.
 - If server error, return HTTP status 500 with a reason payload.
