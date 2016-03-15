@@ -3,7 +3,7 @@ Build Awesome Coupons RESTful JSON API that can Create/Read/Update/Delete coupon
 
 ### Things we are looking for
 
-- Clear, simple code
+- Clear, simple, tested code
 - Explanatory comments
 - Consistent Naming Conventions
 - Request validation
