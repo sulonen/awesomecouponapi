@@ -102,7 +102,7 @@ GET /coupons/:couponId
 **Response**
 
 - Return HTTP status 200 with a payload of the requested coupon.
-- If invalid coupon ID, return HTTP status 400.
+- If invalid coupon ID like "coupons/abc", return HTTP status 400.
 - If non exist coupon ID, return HTTP status 404.
 - If server error, return HTTP status 500 with a reason payload.
 - Otherwise, return the appropriate standard HTTP status.
