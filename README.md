@@ -1,29 +1,33 @@
 ## Code Challenge
-Build Awesome Coupons RESTful JSON API that can Create/Read/Update/Delete coupon data. Feel free to use any programming language and/or framework.
-
-### Things we are looking for
-
-- Clear, simple, unit tested code
-- Explanatory comments
-- Consistent Naming Conventions
-- Request validation
-- Efficient source/test code structure/folder
+Build a RESTful JSON API that enables create/read/update/delete coupon data.
 
 ### Deliverables
 
-- Please send us back a link to a git repo with the completed code challenge.
-- Include a README.md file in your repo with a link to your application deployed on Heroku or Digital Ocean.
-- Also include in readme that explains the benefits and any additional challenges you faced.
-- DO YOUR OWN WORK. If it appears not to be your own work, it will be disqualified.
-- DOCUMENT ALL ASSUMPTIONS. Explain why you made that assumption. You may make the wrong assumption, but if it’s
-well-documented, you’ll help us see your thought process. Undocumented assumptions can’t help us help you.
-- HAVE FUN. This will likely be challenging, but take this opportunity to exercise your creativity.
+- A Github repo with the implementation to address the code challenge
+- A README.md file in your repo
+- Instructions in the README.md file to build and execute your solution
 
-### Awesome Coupons API Specification
+### The Rules of Engagement
 
-### /coupons GET
+- Do your own work. Rely as needed on external support, the Internet, Stack Overflow, etc. but deliver your own solution.
+- Ask questions. If something isn't clear, ask -- we would expect no less if we were working together on this problem.
+- Use any programming language and/or framework you choose.
 
-#### Get all coupons within the system
+### Things we are looking for
+
+- Clear approach to solution
+- Logical code structure
+- Supporting comments and README documentation
+- Unit test support
+
+
+## Awesome Coupons API Specification
+
+Your solution should provide the following methods:
+
+### GET /coupons
+
+#### Retrieve all coupons
 ```
 GET /coupons
 GET /coupons?state=valid
@@ -33,7 +37,7 @@ state param is use for filtering coupons that are valid (not expired) or invalid
 
 **Response**
 
-- Return HTTP status 200 with a payload of the coupons list.
+- Return HTTP status 200 with a list of coupons
 - If no coupons exist, return HTTP status 200 with an empty array.
 - If server error, return HTTP status 500 with a reason payload.
 - Otherwise, return the appropriate standard HTTP status.
@@ -91,9 +95,9 @@ returns 200 OK
 ]
 ```
 
-### /coupons/:couponId  GET
+### GET /coupons/:couponId
 
-#### Getting a specific coupon
+#### Retrieve a specific coupon
 
 ```
 GET /coupons/:couponId
@@ -137,11 +141,13 @@ returns 200 OK
   "published_at": "2016-03-05T08:40:51.620Z"
 }
 ```
-### /coupons POST
-#### Create a specific coupon
-```
-POST /coupons with {:data} like
 
+
+### POST /coupons
+
+#### Create a coupon
+```
+POST /coupons
 {
   "category": "Coupons & Special Offers",
   "couponcode": "60 31261",
@@ -184,8 +190,11 @@ returns 201 Created & set location response with /coupons/new_id.
 ```
 {"id": 7}
 ```
-### /coupons/:couponId PUT
+
+### PUT /coupons/:couponId
+
 #### Update a specific coupon
+
 ```
 PUT /coupons/:couponId with {:data} like
 
@@ -236,8 +245,10 @@ returns 200 OK
   "published_at": "2016-03-05T08:40:51.620Z"
 }
 ```
-### /coupons/:couponId Delete
+
+### DELETE /coupons/:couponId
 #### Delete a specific coupon
+
 ```
 DELETE /coupons/:couponId
 ```
