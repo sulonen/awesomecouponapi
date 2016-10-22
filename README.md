@@ -12,7 +12,7 @@ Build a RESTful JSON API that enables create/read/update/delete coupon data.
 - Do your own work. Rely as needed on external support, the Internet, Stack Overflow, etc. but deliver your own solution.
 - Ask questions. If something isn't clear, ask -- we would expect no less if we were working together on this problem.
 - Use any programming language and/or framework you choose.
-- Use the accompanying coupons.json file as source records for your service.
+- Use the accompanying [coupons.json](coupons.json) file as source records for your service.
 
 ### Things we are looking for
 
