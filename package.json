@@ -1,0 +1,22 @@
+{
+  "name": "awesomecouponapi",
+  "version": "1.0.0",
+  "description": "RESTful JSON API",
+  "main": "api_server.js",
+  "scripts": {
+    "test": "ava --tap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sulonen/awesomecouponapi.git"
+  },
+  "author": {
+    "name": "Kevin Sulonen",
+    "email": "kevin.sulonen@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sulonen/awesomecouponapi/issues"
+  },
+  "homepage": "https://github.com/sulonen/awesomecouponapi#readme"
+}
