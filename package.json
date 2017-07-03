@@ -4,7 +4,8 @@
   "description": "RESTful JSON API",
   "main": "api_server.js",
   "scripts": {
-    "test": "ava --tap"
+    "start": "nodemon api_server.js",
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/sulonen/awesomecouponapi/issues"
   },
-  "homepage": "https://github.com/sulonen/awesomecouponapi#readme"
+  "homepage": "https://github.com/sulonen/awesomecouponapi#readme",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-better-body": "^3.0.2",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^7.2.1"
+  },
+  "devDependencies": {
+    "ava": "^0.20.0",
+    "supertest": "^3.0.0"
+  }
 }
