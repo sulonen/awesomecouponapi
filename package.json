@@ -5,7 +5,7 @@
   "main": "api_server.js",
   "scripts": {
     "start": "nodemon api_server.js",
-    "test": "ava"
+    "test": "ava --verbose --color"
   },
   "repository": {
     "type": "git",
