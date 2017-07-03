@@ -5,7 +5,7 @@ let app = require('../api_server').listen();
 let service = require('../package.json');
 let request = require('supertest');
 
-test.cb('Permitted methods', t => {
+test.cb('api_server:permitted methods', t => {
   request(app)
     .delete('/status')
     .end((err, res) => {
@@ -15,7 +15,7 @@ test.cb('Permitted methods', t => {
     });
 });
 
-test.cb('Status route', t => {
+test.cb('api_server:status route', t => {
   request(app)
     .get('/status')
     .expect('Content-Type', /json/)
