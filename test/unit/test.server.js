@@ -1,12 +1,12 @@
 'use strict';
 
 let test = require('ava').test;
-let app = require('../../server').listen();
+let app = require('../../server');
 let service = require('../../package.json');
-let request = require('supertest');
+let request = require('supertest').agent(app.listen());
 
 test.cb('server:permitted methods', t => {
-  request(app)
+  request
     .delete('/status')
     .end((err, res) => {
       t.not(res.error, '');
@@ -16,7 +16,7 @@ test.cb('server:permitted methods', t => {
 });
 
 test.cb('server:status route', t => {
-  request(app)
+  request
     .get('/status')
     .expect('Content-Type', /json/)
     .expect(200)
@@ -25,3 +25,4 @@ test.cb('server:status route', t => {
       t.end();
     });
 });
+

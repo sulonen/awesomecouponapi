@@ -1,6 +1,8 @@
 'use strict';
 
-const PORT = process.env.PORT || 3000;
+let PORT = process.env.PORT || (process.argv[2] || 3000);
+PORT = (typeof PORT === 'number') ? PORT : 3000;
+
 const service = require('./package.json');
 const app_router = require('koa-router')();
 const api_router = require('./routes/api_router').router;
@@ -25,7 +27,5 @@ app.use(app_router.allowedMethods());
 app.use(api_router.routes());
 app.use(api_router.allowedMethods());
 
-app.listen(PORT, () => {
-  console.info('Server listening on port ' + PORT);
-});
-
+if (!module.parent) app.listen(PORT);
+console.info('Server listening on port ' + PORT);
