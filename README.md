@@ -60,7 +60,7 @@ returns 200 OK
 ```
 [
   {
-    "id": 1,
+    "_id": "595daaa340f2bc3572b3ab4e",
     "category": "Coupons & Special Offers",
     "couponcode": "60 31261",
     "description": "Offer limited to in-store purchase only.",
@@ -79,7 +79,7 @@ returns 200 OK
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "id" : 2,
+    "_id": "595f08363b58091946ca12e2,
     "category": "Coupons & Special Offers",
     "couponcode": "PETS",
     "description": "Offer limited to in-store purchase only.",
@@ -120,14 +120,14 @@ GET /coupons/:couponId
 
 Input:
 ```
-curl -k  http://localhost:3000/coupons/2
+curl -k  http://localhost:3000/coupons/595f08363b58091946ca12e2
 ```
 Output:
 returns 200 OK
 
 ```
 {
-  "id" : 2,
+  "_id": "595f08363b58091946ca12e2",
   "category": "Coupons & Special Offers",
   "couponcode": "60 31261",
   "description": "Offer limited to in-store purchase only.",
@@ -187,13 +187,31 @@ POST /coupons
 Input:
 ```
 curl -ik  -H "Content-Type: application/json" http://localhost:3000/coupons -X POST -d '
-{"category":"Coupons & Special Offers","couponcode":"60 31261","description":"Offer limited to in-store purchase only.","merchant":"Super Sporting Goods","title":"20% Off 2 Regular-Priced Items and/or 10% Off 2 Sale-Priced Items","store":{"lat":47.66001,"long":-122.31313,"city":"Seattle","phone":"547-2445","state":"Wa","street":"4315 UNIVERSITY WAY N.E.","zip":"98105"},"expire_at":"2016-08-05T08:40:51.620Z","published_at":"2016-03-05T08:40:51.620Z"}'
+{
+	"category": "Coupons & Special Offers",
+	"couponcode": "PETS",
+	"description": "Offer limited to in-store purchase only.",
+	"merchant": "Coach",
+	"title": "Up to 50% OFF select Winter sale items",
+	"store": {
+		"lat": 47.66001,
+		"long": -122.31313,
+		"city": "Seattle",
+		"phone": "547-2445",
+		"state": "Wa",
+		"street": "123 Main WAY N.E.",
+		"zip": "98105"
+	},
+	"expire_at": "2016-03-05T08:40:51.620Z",
+  "published_at": "2016-03-05T08:40:51.620Z"
+}
+'
 ```
 
 Output:
 returns 201 Created & set location response with /coupons/new_id.
 ```
-{"id": 7}
+{"_id": "595f08363b58091946ca12e2"}
 ```
 
 ### PUT /coupons/:couponId
@@ -223,7 +241,7 @@ PUT /coupons/:couponId with {:data} like
 Input:
 ```
 curl -k  -H "Content-Type: application/json"
-http://localhost:3000/coupons/1 -X PUT  -d '{"couponcode": "UPDATED_COUPON"}'
+http://localhost:3000/coupons/595f0b247a74c01a3a31d47b -X PUT  -d '{"couponcode": "UPDATED_COUPON"}'
 ```
 
 Output:
@@ -231,7 +249,7 @@ returns 200 OK
 
 ```
 {
-  "id": 2;
+  "_id": "595daaa340f2bc3572b3ab4e",
   "category": "Coupons & Special Offers",
   "couponcode": "UPDATED_COUPON",
   "description": "Offer limited to in-store purchase only.",
@@ -268,7 +286,7 @@ DELETE /coupons/:couponId
 
 Input:
 ```
-curl -k  -X DELETE http://localhost:3000/coupons/1
+curl -k  -X DELETE http://localhost:3000/coupons/595f0b247a74c01a3a31d47b
 ```
 Output:
 returns 204 No Content

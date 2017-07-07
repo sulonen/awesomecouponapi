@@ -54,7 +54,7 @@ module.exports.router = router
     let newCoupon = new Coupon(ctx.request.body);
     try {
       await newCoupon.save();
-      ctx.body = newCoupon;
+      ctx.body = `\{"_id": "${newCoupon._doc._id.toString()}"\}`;
     } catch (err) {
       ctx.status = 500;
       ctx.body = err.stack;
