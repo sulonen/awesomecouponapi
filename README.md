@@ -1,8 +1,24 @@
 # Awesome Coupon API
 
+## Observations
+
+* Node 8 will be LTS soon - I'm anticipating that by requiring Node 7.x
+* If Node 7.x is problematic, I've found transpilation on deployment to be a
+  practical technique
+* I used MongoDB for a variety of reasons; I'm aware of several reasons not to,
+  and would recommend a review of the persistence method prior to moving this
+  application to a production environment 
+* Given that I'm using Mongoose as an ORM, I decided not to abstract data layer
+  functionality away from application routing
+* Speaking of ORMs, I wanted to discuss the use of an ORM with respect to
+  application security in addition to other reasons
+* Along similar lines, I decided not to use integers for object keys; my
+  implementation uses MongoDB native autonumbering instead of direct ID
+  assignment
+
 ## Requirements
 
-- Node version 7.6.0 or better
+- Node version 7.6.0 or better - or consider running with the `--harmony` flag
 - MongoDB version 3.4.5 or better
 
 ## Setup/Run
