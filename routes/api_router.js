@@ -62,13 +62,31 @@ module.exports.router = router
     }
   })
   .put('/:couponId', async (ctx) => {
-     try {
-    //   If invalid coupon ID or invalid payload, return HTTP status 400.
-    //   If non exist coupon ID, return HTTP status 404.
-    //   If no or invalid content type header, return HTTP status 415.
-    //   If server error, return HTTP status 500 with a reason payload.
-      ctx.body = await Coupon.findByIdAndUpdate(ctx.params.couponId, ctx.request.body, {new: true});
+    try {
+      if (ctx.params.couponId.length !== 24) {
+        ctx.status = 400;
+        ctx.body = 'Invalid parameter';
+        return;
+      }
+      if (!ctx.req.headers['content-type']
+        || ctx.req.headers['content-type'] !== 'application/json') {
+        ctx.status = 415;
+        ctx.body = 'Invalid request';
+      }
+      if (typeof ctx.request.body !== 'object') {
+        ctx.status = 400;
+        ctx.body = 'Invalid request';
+        return;
+      }
+      let result = await Coupon.findByIdAndUpdate(ctx.params.couponId,
+        ctx.request.body, {new: true});
+      if (result === null) {
+        ctx.status = 404;
+        ctx.body = 'Not found';
+        return;
+      }
       ctx.status = 200;
+      ctx.body = result;
     } catch (err) {
       ctx.status = 500;
       ctx.body = err.stack;
@@ -76,7 +94,17 @@ module.exports.router = router
     }
   })
   .delete('/:couponId', async (ctx) => {
-    // delete coupon
-    ctx.body = ctx.params.couponId;
+    try {
+      await Coupon.findByIdAndRemove(ctx.params.couponId);
+      if (ctx.status == 404) {
+        ctx.body = 'Not found';
+        return;
+      }
+      ctx.status = 204;
+    } catch (err) {
+      ctx.status = 500;
+      ctx.body = err.stack;
+      console.error(err);
+    }
   });
 
