@@ -8,9 +8,9 @@
 ## Setup/Run
 
 1. After cloning the repository, `cd` into the directory and run `npm install`
-- Start the datababase instance with `npm run startdb`
-- To run the application, run `npm start`
-- To run associated tests, run `npm test`
+2. Start the datababase instance with `npm run startdb`
+3. To run the application, run `npm start`
+4. To run associated tests, run `npm test`
 
 ## REST routes
 
