@@ -54,6 +54,8 @@ module.exports.router = router
     let newCoupon = new Coupon(ctx.request.body);
     try {
       await newCoupon.save();
+      ctx.status = 201;
+      ctx.type = 'json';
       ctx.body = `\{"_id": "${newCoupon._doc._id.toString()}"\}`;
     } catch (err) {
       ctx.status = 500;
@@ -97,6 +99,7 @@ module.exports.router = router
     try {
       await Coupon.findByIdAndRemove(ctx.params.couponId);
       if (ctx.status == 404) {
+        ctx.status = 404;
         ctx.body = 'Not found';
         return;
       }

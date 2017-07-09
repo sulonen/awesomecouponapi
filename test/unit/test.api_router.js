@@ -2,17 +2,20 @@
 
 let test = require('ava').test;
 let app = require('../../server');
-let request = require('supertest').agent(app.listen());
-let sinon = require('sinon');
+let coupons = require('../../lib/coupons.json');
+let request = require('supertest');
 
-test.cb('api_router:load', t => {
+test.cb.serial('api_router:post', t => {
   request
-    .get('/status')
-    .expect('Content-Type', /json/)
-    .expect(200)
+    .post('/coupons')
+    .send(coupons[0])
+    .set('Accept', 'application/json')
     .end((err, res) => {
+      t.is(err, '');
       t.is(res.body.service, 'awesomecouponapi');
       t.end();
     });
 });
+
+
 

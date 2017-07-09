@@ -2,7 +2,6 @@
 
 let test = require('ava').test;
 let app = require('../../server');
-let service = require('../../package.json');
 let request = require('supertest').agent(app.listen());
 
 test.cb('server:permitted methods', t => {
