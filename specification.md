@@ -1,34 +1,30 @@
-# Awesome Coupon API
+## Code Challenge
+Build a RESTful JSON API that enables create/read/update/delete coupon data.
 
-## Observations
+### Deliverables
 
-* Node 8 will be LTS soon - I'm anticipating that by requiring Node 7.x
-* If Node 7.x is problematic, I've found transpilation on deployment to be a
-  practical technique
-* I used MongoDB for a variety of reasons; I'm aware of several reasons not to,
-  and would recommend a review of the persistence method prior to moving this
-  application to a production environment 
-* Given that I'm using Mongoose as an ORM, I decided not to abstract data layer
-  functionality away from application routing
-* Speaking of ORMs, I wanted to discuss the use of an ORM with respect to
-  application security in addition to other reasons
-* Along similar lines, I decided not to use integers for object keys; my
-  implementation uses MongoDB native autonumbering instead of direct ID
-  assignment
+- A Github repo with the implementation to address the code challenge
+- A README.md file in your repo
+- Instructions in the README.md file to build and execute your solution
 
-## Requirements
+### The Rules of Engagement
 
-- Node version 7.6.0 or better - or consider running with the `--harmony` flag
-- MongoDB version 3.4.5 or better
+- Do your own work. Rely as needed on external support, the Internet, Stack Overflow, etc. but deliver your own solution.
+- Ask questions. If something isn't clear, ask -- we would expect no less if we were working together on this problem.
+- Use any programming language and/or framework you choose.
+- Use the accompanying [coupons.json](coupons.json) file as source records for your service.
 
-## Setup/Run
+### Things we are looking for
 
-1. After cloning the repository, `cd` into the directory and run `npm install`
-2. Start a datababase instance with `npm run startdb`
-3. To run the application, run `npm start`
-4. To run associated tests, run `npm test`
+- Clear approach to solution
+- Logical code structure
+- Supporting comments and README documentation
+- Unit test support
 
-## REST routes
+
+## Awesome Coupons API Specification
+
+Your solution should provide the following methods:
 
 ### GET /coupons
 
@@ -51,7 +47,7 @@ state param is use for filtering coupons that are valid (not expired) or invalid
 
 Input:
 ```
-curl -k http://localhost:3000/coupons
+curl -k http://localhost:3600/coupons
 ```
 
 Output:
@@ -60,7 +56,7 @@ returns 200 OK
 ```
 [
   {
-    "_id": "595daaa340f2bc3572b3ab4e",
+    "id": 1,
     "category": "Coupons & Special Offers",
     "couponcode": "60 31261",
     "description": "Offer limited to in-store purchase only.",
@@ -79,7 +75,7 @@ returns 200 OK
     "published_at": "2016-03-05T08:40:51.620Z"
   },
   {
-    "_id": "595f08363b58091946ca12e2,
+    "id" : 2,
     "category": "Coupons & Special Offers",
     "couponcode": "PETS",
     "description": "Offer limited to in-store purchase only.",
@@ -120,14 +116,14 @@ GET /coupons/:couponId
 
 Input:
 ```
-curl -k  http://localhost:3000/coupons/595f08363b58091946ca12e2
+curl -k  http://localhost:3600/coupons/2
 ```
 Output:
 returns 200 OK
 
 ```
 {
-  "_id": "595f08363b58091946ca12e2",
+  "id" : 2,
   "category": "Coupons & Special Offers",
   "couponcode": "60 31261",
   "description": "Offer limited to in-store purchase only.",
@@ -186,32 +182,14 @@ POST /coupons
 
 Input:
 ```
-curl -ik  -H "Content-Type: application/json" http://localhost:3000/coupons -X POST -d '
-{
-	"category": "Coupons & Special Offers",
-	"couponcode": "PETS",
-	"description": "Offer limited to in-store purchase only.",
-	"merchant": "Coach",
-	"title": "Up to 50% OFF select Winter sale items",
-	"store": {
-		"lat": 47.66001,
-		"long": -122.31313,
-		"city": "Seattle",
-		"phone": "547-2445",
-		"state": "Wa",
-		"street": "123 Main WAY N.E.",
-		"zip": "98105"
-	},
-	"expire_at": "2016-03-05T08:40:51.620Z",
-  "published_at": "2016-03-05T08:40:51.620Z"
-}
-'
+curl -ik  -H "Content-Type: application/json" http://localhost:3600/coupons -X POST -d '
+{"category":"Coupons & Special Offers","couponcode":"60 31261","description":"Offer limited to in-store purchase only.","merchant":"Super Sporting Goods","title":"20% Off 2 Regular-Priced Items and/or 10% Off 2 Sale-Priced Items","store":{"lat":47.66001,"long":-122.31313,"city":"Seattle","phone":"547-2445","state":"Wa","street":"4315 UNIVERSITY WAY N.E.","zip":"98105"},"expire_at":"2016-08-05T08:40:51.620Z","published_at":"2016-03-05T08:40:51.620Z"}'
 ```
 
 Output:
 returns 201 Created & set location response with /coupons/new_id.
 ```
-{"_id": "595f08363b58091946ca12e2"}
+{"id": 7}
 ```
 
 ### PUT /coupons/:couponId
@@ -241,7 +219,7 @@ PUT /coupons/:couponId with {:data} like
 Input:
 ```
 curl -k  -H "Content-Type: application/json"
-http://localhost:3000/coupons/595f0b247a74c01a3a31d47b -X PUT  -d '{"couponcode": "UPDATED_COUPON"}'
+http://localhost:3600/coupons/1 -X PUT  -d '{"couponcode": "UPDATED_COUPON"}'
 ```
 
 Output:
@@ -249,7 +227,7 @@ returns 200 OK
 
 ```
 {
-  "_id": "595daaa340f2bc3572b3ab4e",
+  "id": 2;
   "category": "Coupons & Special Offers",
   "couponcode": "UPDATED_COUPON",
   "description": "Offer limited to in-store purchase only.",
@@ -286,7 +264,7 @@ DELETE /coupons/:couponId
 
 Input:
 ```
-curl -k  -X DELETE http://localhost:3000/coupons/595f0b247a74c01a3a31d47b
+curl -k  -X DELETE http://localhost:3600/coupons/1
 ```
 Output:
 returns 204 No Content

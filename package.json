@@ -1,0 +1,37 @@
+{
+  "name": "awesomecouponapi",
+  "version": "1.0.0",
+  "description": "RESTful JSON API",
+  "main": "server.js",
+  "scripts": {
+    "startdb": "mongod --dbpath ./data",
+    "start": "nodemon server.js",
+    "test": "npm run startdb & ./node_modules/.bin/ava --verbose --color"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sulonen/awesomecouponapi.git"
+  },
+  "author": {
+    "name": "Kevin Sulonen",
+    "email": "kevin.sulonen@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sulonen/awesomecouponapi/issues"
+  },
+  "homepage": "https://github.com/sulonen/awesomecouponapi#readme",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-body": "^2.3.0",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^7.2.1",
+    "mongoose": "^4.11.1",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {
+    "ava": "^0.20.0",
+    "mongomem": "^0.1.9",
+    "supertest": "^3.0.0"
+  }
+}
