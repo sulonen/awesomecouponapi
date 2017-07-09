@@ -4,7 +4,6 @@ let test = require('ava').test;
 let app = require('../../server');
 let coupons = require('../../lib/coupons.json');
 let request = require('supertest').agent(app.listen());
-process.env.MONGO_DB = 'mongodb://localhost/test';
 let coupon_id;
 
 test.cb.serial('api_router:post', t => {
@@ -100,3 +99,4 @@ test.cb.serial('api_router:delete /:couponId - 404', t => {
       t.end();
     });
 });
+
