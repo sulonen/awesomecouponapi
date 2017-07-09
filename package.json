@@ -6,7 +6,7 @@
   "scripts": {
     "startdb": "mongod --dbpath ./data",
     "start": "nodemon server.js",
-    "test": "ava --verbose --color"
+    "test": "./node_modules/.bin/ava --verbose --color"
   },
   "repository": {
     "type": "git",
